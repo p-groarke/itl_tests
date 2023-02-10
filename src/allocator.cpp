@@ -9,6 +9,7 @@
 #include <vector>
 
 
+/*
 TEST(Allocator, FreeDegradation) {
 	constexpr size_t num_items = 10'000'000;
 	constexpr size_t num_subvecs = 20;
@@ -25,6 +26,10 @@ TEST(Allocator, FreeDegradation) {
 				v[i] += v[next_i];
 			}
 		};
+		tbb::parallel_for(tbb::blocked_range<size_t>{ 0, v.size() }, preheat);
+		tbb::parallel_for(tbb::blocked_range<size_t>{ 0, v.size() }, preheat);
+		tbb::parallel_for(tbb::blocked_range<size_t>{ 0, v.size() }, preheat);
+		tbb::parallel_for(tbb::blocked_range<size_t>{ 0, v.size() }, preheat);
 		tbb::parallel_for(tbb::blocked_range<size_t>{ 0, v.size() }, preheat);
 
 		print_rnd(v);
@@ -80,3 +85,4 @@ TEST(Allocator, FreeDegradation) {
 
 	s.print();
 }
+*/

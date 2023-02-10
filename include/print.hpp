@@ -9,8 +9,6 @@
 // So our benchmarks aren't optimized out.
 
 struct printer {
-	// printer() {
-	// }
 	~printer() {
 		std::cerr << std::endl << ss.str() << std::endl;
 	}
